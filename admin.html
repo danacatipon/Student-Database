@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Welcome Admin!</h2>
+        <div class="profile-picture">
+            <img src="img/PUPLogo.png" alt="Profile Picture">
+        </div>
+        <hr>
+        <ul>
+            <center><li><a href="#" id="homeLink">Dashboard</a></li>
+            <li><a href="#" id="studentListLink">Student List</a></li>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <li><a href="#" id="logoutLink">Logout</a></li></center>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div id="home" class="dashboard-section">
+            <div class="home">
+                <h1>Dashboard</h1>
+            </div>
+            <div class="stats">
+                <div class="stat-box">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='bx bxs-group'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="stat-text">
+                        <center><h1 id="totalStudents">0</h1>
+                        <p>Total Students</p></center>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='bx bx-female'></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="stat-text">
+                        <center><h1 id="totalGirls">0</h1>
+                        <p>Total Girls</p></center>
+                    </div>
+                </div>
+                <div class="stat-box">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='bx bx-male'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="stat-text">
+                        <center><h1 id="totalBoys">0</h1>
+                        <p>Total Boys</p></center>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="announcements">
+                <fieldset class="announcement-box">
+                    <h4><i class='bx bxs-pin'></i> Announcement 1</legend></h4>
+                    <p></p>
+                </fieldset>
+                <fieldset class="announcement-box">
+                    <h4><i class='bx bxs-pin'></i> Announcement 2</legend></h4>
+                    <p></p>
+                </fieldset>
+                <fieldset class="announcement-box">
+                    <h4><i class='bx bxs-pin'></i> Announcement 3</legend></h4>
+                    <p></p>
+                </fieldset>
+            </div>
+        </div>
+        <div id="studentList" class="dashboard-section" style="display: none;">
+            <h1>Student List</h1>
+            <button id="addStudentBtn">Add Student</button>
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Picture</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Gender</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="studentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Student</h2>
+            <form id="studentForm">
+                <input type="hidden" id="studentId" name="studentId">
+                <div class="form-group">
+                    <label for="studentName">Name:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Class:</label>
+                    <input type="text" id="studentClass" name="studentClass" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentGender">Gender:</label>
+                    <select id="studentGender" name="studentGender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="studentPicture">Picture:</label>
+                    <input type="url" id="studentPicture" name="studentPicture" notrequired accept="img/">
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
